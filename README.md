@@ -3,7 +3,7 @@ Una plataforma para la creación de actividades de recolección de datos con int
 
 Cada directorio originalmente era un repositorio con su mismo nombre que pueden encontrarse en este mismo usuario de GitHub.
 
-En `Artículos relacionados` pueden encontrarse los artículos publicados en relación a la tesina
+En `Artículos relacionados` pueden encontrarse los artículos publicados en torno al objetivo de la tesina.
 
 El código está organizado de la siguiente manera:
 
