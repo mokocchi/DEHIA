@@ -1,0 +1,41 @@
+security:
+    encoders:
+        App\Entity\User:
+            algorithm: sha512
+
+    providers:
+        api_user_provider:
+            entity:
+                class: App\Entity\Usuario
+                property: googleid
+
+    firewalls:
+        validate_jwt_token:
+            pattern: ^/api/v1.0/users/me
+            stateless: true
+            anonymous: true
+            guard:
+                authenticators:
+                    - App\Security\JWTTokenAuthenticator
+
+        oauth_token:
+            pattern: ^/api/oauth/v2/token
+            security: false
+            stateless: true
+        
+        health_check:
+            pattern: ^/api/health-check
+            security: false
+            stateless: true
+
+        jwt_token:
+            pattern: ^/api/v1.0/tokens
+            security: false
+            stateless: true
+        
+        validate_token:
+            pattern: ^/api/validate
+            stateless: true
+            anonymous: false
+            provider: api_user_provider
+            fos_oauth: true
